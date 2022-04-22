@@ -18,5 +18,5 @@
 * семантика тегов
 
 
-1. [Mesto](https://vitaliy-firefighter.github.io/mesto/)
+1. [Mesto]()
 
