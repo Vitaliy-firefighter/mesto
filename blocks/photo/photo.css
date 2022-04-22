@@ -1,0 +1,19 @@
+.photo {
+  padding: 50px 200px 0;
+}
+@media all and (max-width: 1100px) {
+  .photo {
+    padding: 50px 120px 0;
+  }
+}
+@media all and (max-width: 900px) {
+  .photo {
+    padding: 50px 48px 0;
+  }
+}
+@media all and (max-width: 600px) {
+  .photo {
+    padding: 36px 19px 0;
+  }
+}
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages/index.css">
+  <link rel="icon" href="images/logo/logo.svg">
+  <title>Mesto</title>   
+</head>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <div class="header__wrapper">
+        <img src="images/logo/logo.svg" alt="логотип Место Россия" class="logo">
+      </div>
+    </header>
+    <main>
+      <section class="profile">
+        <div class="profile__wrapper">
+          <div class="profile__column">
+            <img src="images/profile/Avatar.jpg" alt="аватар пользователя" class="profile__avatar">
+            <div class="profile__info">
+              <div class="profile__description">
+                <h1 class="profile__names">Жак-Ив Кусто</h1>
+                <img src="images/profile/Edit-Button.svg" alt="редактор пользователя" class="profile__edit">
+              </div>
+              <p class="profile__doer">Исследователь океана</p>
+            </div>
+          </div>
+          <button class="profile__add">
+            <span class="profile__plus"></span>
+          </button>
+        </div>
+      </section>
+      <section class="photo">
+        <ul class="photo__grid">
+          <li class="photo__item">
+            <img src="images/photo/karachaevsk.jpg" alt="фотогрфия с заброшенным монастырём" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Карачаевск</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+          <li class="photo__item">
+            <img src="images/photo/Elbrus.jpg" alt="гора Эльбрус находится очень далеко на горизонте" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Гора Эльбрус</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+          <li class="photo__item">
+            <img src="images/photo/Dombay.jpg" alt="вид с птичьего полета на лес и на горы" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Домбай</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+          <li class="photo__item">
+            <img src="images/photo/Elbrus.jpg" alt="гора Эльбрус находится очень далеко на горизонте" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Гора Эльбрус</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+          <li class="photo__item">
+            <img src="images/photo/Dombay.jpg" alt="вид с птичьего полета на лес и на горы" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Домбай</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+          <li class="photo__item">
+            <img src="images/photo/karachaevsk.jpg" alt="фотогрфия с заброшенным монастырём" class="photo__image">
+            <div class="photo__content">
+              <h2 class="photo__heading">Карачаевск</h2>
+              <svg class="photo__like"  viewBox="0 -2 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583823 2.76979 1.6841 1.68186C3.92957 -0.560619 7.61215 -0.560619 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C14.3486 -0.560619 18.0311 -0.560619 20.2991 1.68186Z"/>
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+  </div>
+  <div class="popup">
+    <div class="popup__container">
+      <form class="popup__form" action="#">
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <fieldset class="popup__fieldset">
+          <input class="popup__input" type="text" id="nameInput" value="Жак-Ив Кусто">
+          <input class="popup__input" type="text" id="jobInput" value="Исследователь океана">
+        </fieldset>
+        <button type="submit" class="popup__save">Сохранить</button>
+        <img src="images/close/Close-Icon.svg" class="popup__close" alt="иконка ввиде крестика">
+      </form>
+    </div>
+  </div>
+  <script src="JS/index.js"></script>
+</body>
+</html>

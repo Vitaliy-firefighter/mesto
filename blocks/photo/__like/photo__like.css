@@ -1,0 +1,12 @@
+.photo__like {
+  width: 22px;
+  height: 19px;
+  transition: .3s;
+  cursor: pointer;
+  fill: #fff;
+  stroke: #000000;
+  stroke-width: 2px;
+}
+.photo__like:hover {
+  opacity: .6;
+}

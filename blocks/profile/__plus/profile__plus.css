@@ -1,0 +1,25 @@
+.profile__plus {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+}
+@media all and (max-width: 750px) {
+  .profile__plus {
+    width: 16px;
+  }
+}
+.profile__plus::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(90deg);
+}
+@media all and (max-width: 750px) {
+  .profile__plus::before {
+    width: 16px;
+  }
+}

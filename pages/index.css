@@ -1,0 +1,107 @@
+/* ПОДКЛЮЧАЕМ NORMALIZE  */
+@import url(../vendor/normalize.css);
+
+/* ПОДКЛЮЧАЕМ ШРИФТЫ  */
+@import url(../vendor/Fonts/fonts.css);
+
+/* ПОДКЛЮЧАЕМ PAGE  */
+@import url(../blocks/page/page.css);
+
+/* ПОДКЛЮЧАЕМ PAGE__CONTAINER */
+@import url(../blocks/page/__container/page__container.css);
+
+/* ПОДКЛЮЧАЕМ HEADER */
+@import url(../blocks/header/header.css);
+
+/* ПОДКЛЮЧАЕМ HEADER__WRAPPER */
+@import url(../blocks/header/__wrapper/header__wrapper.css);
+
+/* ПОДКЛЮЧАЕМ LOGO */
+@import url(../blocks/logo/logo.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE */
+@import url(../blocks/profile/profile.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__WRAPPER */
+@import url(../blocks/profile/__wrapper/profile__wrapper.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__COLUMN */
+@import url(../blocks/profile/__column/profile__column.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__AVATAR */
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__STRING */
+@import url(../blocks/profile/__description/profile__description.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__NAMES */
+@import url(../blocks/profile/__names/profile__names.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__EDIT */
+@import url(../blocks/profile/__edit/profile__edit.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__DOER */
+@import url(../blocks/profile/__doer/profile__doer.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__ADD */
+@import url(../blocks/profile/__add/profile__add.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__PLUS */
+@import url(../blocks/profile/__plus/profile__plus.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO */
+@import url(../blocks/photo/photo.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__GRID */
+@import url(../blocks/photo/__grid/photo__grid.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__ITEM */
+@import url(../blocks/photo/__item/photo__item.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__IMAGE */
+@import url(../blocks/photo/__image/photo__image.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__CONTENT */
+@import url(../blocks/photo/__content/photo__content.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__HEADING */
+@import url(../blocks/photo/__heading/photo__heading.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__LIKE */
+@import url(../blocks/photo/__like/photo__like.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__LIKE_ACTIVE */
+@import url(../blocks/photo/__like/_active/photo__like_active.css);
+
+/* ПОДКЛЮЧАЕМ FOOTER */
+@import url(../blocks/footer/footer.css);
+
+/* ПОДКЛЮЧАЕМ FOOTER__COPIRIGHT */
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+/* ПОДКЛЮЧАЕМ POPUP */
+@import url(../blocks/popup/popup.css);
+
+/* ПОДКЛЮЧАЕМ POPUP_OPENED */
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__CONTAINER */
+@import url(../blocks/popup/__container/popup__container.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__FORM */
+@import url(../blocks/popup/__form/popup__form.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__HEADING */
+@import url(../blocks/popup/__heading/popup__heading.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__FIELDSET */
+@import url(../blocks/popup/__fieldset/popup__fieldset.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__INPUT */
+@import url(../blocks/popup/__input/popup__input.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__SAVE */
+@import url(../blocks/popup/__save/popup__save.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__CLOSE */
+@import url(../blocks/popup/__close/popup__close.css);

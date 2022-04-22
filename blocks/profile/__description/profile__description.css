@@ -1,0 +1,10 @@
+.profile__description {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+}
+@media all and (max-width: 750px) {
+  .profile__description {
+    margin: 0 0 14px;
+  }
+}

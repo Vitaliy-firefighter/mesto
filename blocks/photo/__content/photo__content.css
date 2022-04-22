@@ -1,0 +1,9 @@
+.photo__content {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -4px;
+  padding: 25px 25px 30px;
+  box-sizing: border-box;
+}
