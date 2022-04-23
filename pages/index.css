@@ -73,6 +73,9 @@
 /* ПОДКЛЮЧАЕМ PHOTO__LIKE_ACTIVE */
 @import url(../blocks/photo/__like/_active/photo__like_active.css);
 
+/* ПОДКЛЮЧАЕМ PHOTO__LIKE_DISABLED */
+@import url(../blocks/photo/__like/_disabled/photo__like_disabled.css);
+
 /* ПОДКЛЮЧАЕМ FOOTER */
 @import url(../blocks/footer/footer.css);
 

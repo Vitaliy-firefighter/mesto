@@ -37,4 +37,3 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 buttonSave.addEventListener('click', openedPopup);
 
-
