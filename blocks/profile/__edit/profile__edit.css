@@ -1,12 +1,6 @@
 .profile__edit {
   width: 24px;
   height: 24px;
-  cursor: pointer;
-  transition: opacity .3s;
-  max-width: 300px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 @media all and (max-width: 750px) {
   .profile__edit {
@@ -14,6 +8,4 @@
     height: 18px;
   }
 }
-.profile__edit:hover {
-  opacity: .6;
-}
+

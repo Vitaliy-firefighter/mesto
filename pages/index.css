@@ -13,8 +13,8 @@
 /* ПОДКЛЮЧАЕМ HEADER */
 @import url(../blocks/header/header.css);
 
-/* ПОДКЛЮЧАЕМ HEADER__WRAPPER */
-@import url(../blocks/header/__wrapper/header__wrapper.css);
+/* ПОДКЛЮЧАЕМ HEADER__BOTTOM */
+@import url(../blocks/header/__bottom/header__bottom.css);
 
 /* ПОДКЛЮЧАЕМ LOGO */
 @import url(../blocks/logo/logo.css);
@@ -36,6 +36,9 @@
 
 /* ПОДКЛЮЧАЕМ PROFILE__NAMES */
 @import url(../blocks/profile/__names/profile__names.css);
+
+/* ПОДКЛЮЧАЕМ PROFILE__BUTTON-EDIT */
+@import url(../blocks/profile/__button-edit/profile__button-edit.css);
 
 /* ПОДКЛЮЧАЕМ PROFILE__EDIT */
 @import url(../blocks/profile/__edit/profile__edit.css);
@@ -66,6 +69,9 @@
 
 /* ПОДКЛЮЧАЕМ PHOTO__HEADING */
 @import url(../blocks/photo/__heading/photo__heading.css);
+
+/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-LIKE */
+@import url(../blocks/photo/__button-like/photo__button-like.css);
 
 /* ПОДКЛЮЧАЕМ PHOTO__LIKE */
 @import url(../blocks/photo/__like/photo__like.css);
@@ -105,6 +111,9 @@
 
 /* ПОДКЛЮЧАЕМ POPUP__SAVE */
 @import url(../blocks/popup/__save/popup__save.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__button-close */
+@import url(../blocks/popup/__button-close/popup__button-close.css);
 
 /* ПОДКЛЮЧАЕМ POPUP__CLOSE */
 @import url(../blocks/popup/__close/popup__close.css);

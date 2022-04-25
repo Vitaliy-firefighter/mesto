@@ -3,6 +3,7 @@
   font-size: 18px;
   line-height: 122%;
   color: #545454;
+  margin: 0;
 }
 @media all and (max-width: 600px) {
   .footer__copyright {

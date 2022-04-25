@@ -1,0 +1,14 @@
+.photo__button-like {
+  padding: 0;
+  margin: 0;
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+}
+.photo__button-like:focus {
+  outline: none;
+  opacity: .6;
+}
+.photo__button-like:hover {
+  opacity: .6;
+}

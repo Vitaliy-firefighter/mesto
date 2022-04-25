@@ -1,0 +1,15 @@
+.profile__button-edit {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+.profile__button-edit:focus {
+  outline: none;
+  opacity: .6;
+}
+.profile__button-edit:hover {
+  opacity: .6;
+}
