@@ -22,7 +22,6 @@ popupClose.addEventListener('click', openedPopup);
 let formElement = document.querySelector('.popup__form');
 
 
-
 function formSubmitHandler (evt) {
   evt.preventDefault();
 
@@ -31,5 +30,6 @@ function formSubmitHandler (evt) {
 
   openedPopup();
 }
+
 
 formElement.addEventListener('submit', formSubmitHandler); 
