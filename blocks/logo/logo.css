@@ -1,12 +1,10 @@
 .logo {
   width: 142px;
   height: 33px;
-  margin: 0 0 38px;
 }
-@media all and (max-width: 570px) {
+@media all and (max-width: 600px) {
   .logo {
     width: 103px;
     height: 24px;
-    margin: 0 27px 28px;
   }
 }

@@ -13,8 +13,6 @@
 /* ПОДКЛЮЧАЕМ HEADER */
 @import url(../blocks/header/header.css);
 
-/* ПОДКЛЮЧАЕМ HEADER__BOTTOM */
-@import url(../blocks/header/__bottom/header__bottom.css);
 
 /* ПОДКЛЮЧАЕМ LOGO */
 @import url(../blocks/logo/logo.css);
