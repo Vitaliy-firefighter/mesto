@@ -1,9 +1,13 @@
 .photo__button-like {
-  padding: 0;
+  width: 22px;
+  height: 19px;
+  padding: 0 9px 0 11px;
   margin: 0;
   border: none;
   transition: .3s;
   cursor: pointer;
+  background: url(../../../images/like/like_normal.svg) no-repeat;
+  background-position: center center;
 }
 .photo__button-like:focus {
   outline: none;

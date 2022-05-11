@@ -35,86 +35,67 @@
       </section>
       <section class="photo">
         <ul class="photo__grid">
-          <li class="photo__item">
-            <img src="images/photo/karachaevsk.jpg" alt="фотогрфия с заброшенным монастырём" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Карачаевск</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
-          <li class="photo__item">
-            <img src="images/photo/Elbrus.jpg" alt="гора Эльбрус находится очень далеко на горизонте" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Гора Эльбрус</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
-          <li class="photo__item">
-            <img src="images/photo/Dombay.jpg" alt="вид с птичьего полета на лес и на горы" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Домбай</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
-          <li class="photo__item">
-            <img src="images/photo/Elbrus.jpg" alt="гора Эльбрус находится очень далеко на горизонте" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Гора Эльбрус</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
-          <li class="photo__item">
-            <img src="images/photo/Dombay.jpg" alt="вид с птичьего полета на лес и на горы" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Домбай</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
-          <li class="photo__item">
-            <img src="images/photo/karachaevsk.jpg" alt="фотогрфия с заброшенным монастырём" class="photo__image">
-            <div class="photo__content">
-              <h2 class="photo__heading">Карачаевск</h2>
-              <button class="photo__button-like" type="button">
-                <img class="photo__like photo__like_disabled" src="images/like/active.svg" alt="иконка в виде сердца">
-                <img class="photo__like" src="images/like/like_normal.svg" alt="иконка в виде сердца">
-              </button>
-            </div>
-          </li>
+          <template class="photo__template" id="photoTemplate">
+            <li class="photo__item">
+              <img alt="" class="photo__image" src="#">
+              <div class="photo__content">
+                <h2 class="photo__heading"></h2>
+                <button class="photo__button-like" type="button">
+                </button>
+                <button class="photo__button-basket">
+                  <img src="images/basket/Trash.svg" alt="иконка корзины">
+                </button>
+              </div>
+            </li>
+          </template>
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup" id="popupEdit">
     <div class="popup__container">
-      <form class="popup__form" action="#" name="edit-form">
+      <form class="popup__form" action="#" id="popupEditForm" name="edit-form">
         <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__fieldset">
-          <input class="popup__input" type="text" id="nameInput" value="Жак-Ив Кусто">
-          <input class="popup__input" type="text" id="jobInput" value="Исследователь океана">
+          <input class="popup__input" type="text" id="nameInput" value="" placeholder="Имя">
+          <input class="popup__input" type="text" id="jobInput" value="" placeholder="Деятельность">
         </fieldset>
-        <button type="submit" class="popup__save">Сохранить</button>
-        <button class="popup__button-close" type="button">
+        <button type="submit" class="popup__save" id="popupEditSave" >Сохранить</button>
+        <button class="popup__button-close" id="popupEditClose" type="button">
           <img src="images/close/Close-Icon.svg" class="popup__close" alt="иконка в виде крестика">
         </button>
       </form>
+    </div>
+  </div>
+  <div class="popup" id="popupAddCards">
+    <div class="popup__container">
+      <form class="popup__form" id="popupAddCardsForm" action="#" name="edit-form">
+        <h2 class="popup__heading">Новое место</h2>
+        <fieldset class="popup__fieldset">
+          <input class="popup__input" type="text" id="namePlaceInput" value="" placeholder="Название">
+          <input class="popup__input" type="text" id="LinkInput" value="" placeholder="Ссылка на картинку">
+        </fieldset>
+        <button type="submit" class="popup__save">Создать</button>
+        <button class="popup__button-close" id="popupAddCardsClose" type="button">
+          <img src="images/close/Close-Icon.svg" class="popup__close" alt="иконка в виде крестика">
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_bg" id="popupPhoto">
+    <div class="popup__container">
+      <div class="popup__wrapp-figure">
+        <figure class="popup__figure">
+          <img class="popup__image" src="#" alt="">
+          <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+        <button class="popup__button-close popup__button-close_position" id="popupPhotoClose" type="button">
+          <img src="images/close/Close-Icon.svg" class="popup__close" alt="иконка в виде крестика">
+        </button>
+      </div>
     </div>
   </div>
   <script src="JS/index.js"></script>

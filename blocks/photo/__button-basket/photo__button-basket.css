@@ -1,0 +1,19 @@
+.photo__button-basket {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+}
+.photo__button-basket:hover,
+.photo__button-basket:focus {
+  opacity: .6;
+}
+.photo__button-basket:hover {
+  cursor: pointer;
+}
+.photo__button-basket:focus {
+  outline: none;
+   
+}

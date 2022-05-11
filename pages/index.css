@@ -71,14 +71,11 @@
 /* ПОДКЛЮЧАЕМ PHOTO__BUTTON-LIKE */
 @import url(../blocks/photo/__button-like/photo__button-like.css);
 
-/* ПОДКЛЮЧАЕМ PHOTO__LIKE */
-@import url(../blocks/photo/__like/photo__like.css);
+/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-LIKE_ACTIVE */
+@import url(../blocks/photo/__button-like/_active/photo__button-like_active.css);
 
-/* ПОДКЛЮЧАЕМ PHOTO__LIKE_ACTIVE */
-@import url(../blocks/photo/__like/_active/photo__like_active.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__LIKE_DISABLED */
-@import url(../blocks/photo/__like/_disabled/photo__like_disabled.css);
+/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-BASKET */
+@import url(../blocks/photo/__button-basket/photo__button-basket.css);
 
 /* ПОДКЛЮЧАЕМ FOOTER */
 @import url(../blocks/footer/footer.css);
@@ -115,3 +112,21 @@
 
 /* ПОДКЛЮЧАЕМ POPUP__CLOSE */
 @import url(../blocks/popup/__close/popup__close.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__FIGURE */
+@import url(../blocks/popup/__figure/popup__figure.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__IMAGE */
+@import url(../blocks/popup/__image/popup__image.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__FIGCAPTION */
+@import url(../blocks/popup/__figcaption/popup__figcaption.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__BG */
+@import url(../blocks/popup/_bg/popup_bg.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__button-close_position */
+@import url(../blocks/popup/__button-close/_position/popup__button-close_position.css);
+
+/* ПОДКЛЮЧАЕМ POPUP__WRAPP-FIGURE */
+@import url(../blocks/popup/__wrapp-figure/popup__wrapp-figure.css);

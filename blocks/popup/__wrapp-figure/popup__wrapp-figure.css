@@ -1,0 +1,9 @@
+.popup__wrapp-figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  max-width: 75vw;
+  padding: 0;
+  margin: 0;
+}
