@@ -67,11 +67,12 @@ const handleLike = (e) =>  {
 const openPhoto = (e) => {
   openPopup(popupPhoto);
   popupFigcaption.textContent = e.target.alt;
-  popupImage.src = e.target.src
+  popupImage.src = e.target.src;
+  popupImage.alt  = e.target.alt;
 }
 
 
-// ФУНКЦИЯ зашрузки карточки
+// ФУНКЦИЯ создания карточки
 const createCard = ({name, link}) => {
     
   const photoItem = photoTemplate.cloneNode(true);
