@@ -3,11 +3,8 @@ const popupEdit = document.querySelector('#popupEdit');
 const buttonOpenEdit = document.querySelector('.profile__button-edit');
 const buttonEditClose = document.querySelector('#buttonEditClose');
 const buttonEditSave = document.querySelector('#buttonEditSave');
-const nameInput = document.querySelector('#nameInput');
-const jobInput = document.querySelector('#jobInput');
 const names = document.querySelector('.profile__names');
 const doer = document.querySelector('.profile__doer');
-const formProfileEdit = document.querySelector('#popupEditForm');
 
 // ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
 const popupAddCard = document.querySelector('#popupAddCard');
@@ -17,11 +14,17 @@ const photoGrid = document.querySelector('.photo__grid');
 const photoTemplate = document.querySelector('#photoTemplate').content;
 
 
-//  ДОБАВЛЕНИЕ КАРТОЧЕК
+// ФОРМЫ 
+const formEdit = document.forms.editForm;
+const formAddCard = document.forms.formAddCard;
+
+// ИНПУТЫ
 const namePlaceInput = document.querySelector('#namePlaceInput');
 const LinkInput = document.querySelector('#LinkInput');
-const formAddCard = document.querySelector('#formAddCard');
-// =================================================================
+const nameInput = document.querySelector('#nameInput');
+const jobInput = document.querySelector('#jobInput');
+
+
 
 //  ОТКРЫТИЕ ПОПАПА ФОТО
 const popupPhoto = document.querySelector('#popupPhoto');
@@ -35,12 +38,16 @@ const popupFigcaption = document.querySelector('.popup__figcaption');
 // ФУНКЦИЯ ОТКРЫТИЯ ПОПАПА 
 const openPopup = (popup) => {
   popup.classList.add('popup_opened'); 
+  document.addEventListener('keydown', closePopupEsc);
 }
+
 
 // ФУНКЦИЯ ЗАКРЫТИЯ ПОПАПА
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened'); 
+  document.removeEventListener('keydown', closePopupEsc);
 }
+
 
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
 const handleProfileFormSubmit = (evt) => {
@@ -49,7 +56,7 @@ const handleProfileFormSubmit = (evt) => {
   
   names.textContent = nameInput.value;
   doer.textContent = jobInput.value;
-  
+
   closePopup(popupEdit);
   }
 
@@ -105,6 +112,8 @@ initialCards.forEach(function ({name, link}) {
   photoGrid.append(newCard);
   })
 
+
+
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТОЧКИ
 const  handleAddCardFormSubmit = (evt) => {
 
@@ -114,12 +123,30 @@ const  handleAddCardFormSubmit = (evt) => {
   photoGrid.prepend(newCardForm);
 
   closePopup(popupAddCard);
+
   formAddCard.reset();
+}
+
+
+// ФУНКЦИЯ ЗАКРЫТИЯ ОВЕРЕЛЕЯ
+const closePopupOwerlay = (evt) => {
+  if (evt.target.classList.contains('popup__container')) {
+    closePopup(evt.currentTarget);
+  }
+}
+
+// ФУНКЦИЯ ESC 
+const closePopupEsc = (evt) => {
+  if (evt.key === 'Escape') {
+    const popupEl = document.querySelector('.popup_opened');
+    closePopup(popupEl);
+  }
 }
 
 
 
 // =======================================================================
+
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ОТКРЫТИЯ
 buttonOpenEdit.addEventListener('click', function () {
   openPopup(popupEdit);
@@ -132,9 +159,12 @@ buttonEditClose.addEventListener('click', function () {
   closePopup(popupEdit);
 });
 
+// ОБРАБОТЧИK ПРОФИЛЯ ОВРЕЛЕЯ
+popupEdit.addEventListener('mousedown', closePopupOwerlay);
+
 
 // ОБРАБОТЧИК ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
-formProfileEdit.addEventListener('submit', handleProfileFormSubmit); 
+formEdit.addEventListener('submit', handleProfileFormSubmit); 
 
 
 
@@ -149,6 +179,9 @@ buttonAddCardClose.addEventListener('click', function () {
   formAddCard.reset();
 });
 
+// ОБРАБОТЧИK ДОБАВЛЕНИЯ КАРТОЧКИ ОВЕЛЕЯ
+popupAddCard.addEventListener('mousedown', closePopupOwerlay);
+
 
 // ОБРАБОТЧИК ОТПРАЛКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТЫ
 formAddCard.addEventListener('submit', handleAddCardFormSubmit); 
@@ -158,4 +191,7 @@ formAddCard.addEventListener('submit', handleAddCardFormSubmit);
 buttonPhotoClose.addEventListener('click', function () {
   closePopup(popupPhoto);
  });
+
+ // ОБРАБОТЧИK ФОТО ОВЕЛЕЯ
+popupPhoto.addEventListener('mousedown', closePopupOwerlay);
 

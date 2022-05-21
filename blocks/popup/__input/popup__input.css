@@ -7,10 +7,15 @@
   line-height: 121%;
   color: #000000;
   padding: 0 0 13px;
+  margin: 0 0 27px;
 } 
 .popup__input:focus {
   outline: none;
 }
-.popup__input:not(:last-child) {
-  margin: 0 0 27px;
+.popup__input:last-child {
+  margin: 0;
+}
+
+.popup__input::placeholder {
+  color: #C4C4C4;
 }
