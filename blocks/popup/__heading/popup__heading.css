@@ -7,7 +7,7 @@
 }
 @media all and (max-width: 670px) {
   .popup__heading {
-    margin: 0 0 75px;
+    margin: 0 0 45px;
     font-size: 18px;
   }
 }

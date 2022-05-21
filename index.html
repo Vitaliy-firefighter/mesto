@@ -61,9 +61,9 @@
         <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__fieldset">
           <input class="popup__input" type="text" id="nameInput" value="" placeholder="Имя" minlength="2" maxlength="40" required>
-          <span class="popup__input-error nameInput-error"></span>
+          <span class="popup__input-error nameInput-error popup__input-error_position_top"></span>
           <input class="popup__input" type="text" id="jobInput" value="" placeholder="О себе" minlength="2" maxlength="200" required>
-          <span class="popup__input-error jobInput-error"></span>
+          <span class="popup__input-error jobInput-error popup__input-error_position_bottom"></span>
         </fieldset>
         <button type="submit" class="popup__save" id="buttonEditSave" >Сохранить</button>
         <button class="popup__button-close" id="buttonEditClose" type="button">
@@ -78,11 +78,11 @@
         <h2 class="popup__heading">Новое место</h2>
         <fieldset class="popup__fieldset">
           <input class="popup__input" type="text" id="namePlaceInput" value="" placeholder="Название" minlength="2" maxlength="30" required>
-          <span class="popup__input-error namePlaceInput-error"></span>
+          <span class="popup__input-error namePlaceInput-error popup__input-error_position_top"></span>
           <input class="popup__input" type="url" id="LinkInput" value="" placeholder="Ссылка на картинку" required>
-          <span class="popup__input-error LinkInput-error"></span>
+          <span class="popup__input-error LinkInput-error popup__input-error_position_bottom"></span>
         </fieldset>
-        <button type="submit" class="popup__save" id="#buttonAddCardSave'">Создать</button>
+        <button type="submit" class="popup__save" id="#buttonAddCardSave">Создать</button>
         <button class="popup__button-close" id="buttonAddCardClose" type="button">
           <img src="images/close/Close-Icon.svg" class="popup__close" alt="иконка в виде крестика">
         </button>
