@@ -1,4 +1,11 @@
-
+const obj = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
+}
 const showInputError = (formElement, inputElement, errorMessage, obj) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(obj.inputErrorClass);
@@ -58,23 +65,23 @@ const hasInvalidInput = (inputList) => {
  }
 
 
+ const disasbleButtonSave = (buttonElement) => {
+  buttonElement.classList.add(obj.inactiveButtonClass);
+  buttonElement.setAttribute('disabled', true);
+}
+const enableButtonSave = (buttonElement) => {
+  buttonElement.classList.remove(obj.inactiveButtonClass);
+  buttonElement.removeAttribute('disabled');
+}
+
+
  const toggleButtonState = (inputList, buttonElement, obj) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(obj.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    disasbleButtonSave(buttonElement);
   }
   else {
-    buttonElement.classList.remove(obj.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled');
+    enableButtonSave(buttonElement);
   }
  }
 
-
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save',
-  inactiveButtonClass: 'popup__save_inactive',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active'
-}); 
+enableValidation(obj); 

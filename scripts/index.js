@@ -10,6 +10,7 @@ const doer = document.querySelector('.profile__doer');
 const popupAddCard = document.querySelector('#popupAddCard');
 const buttonOpenPopupAddCard = document.querySelector('.profile__add');
 const buttonAddCardClose = document.querySelector('#buttonAddCardClose');
+const buttonAddCardSave = popupAddCard.querySelector('.popup__save');
 const photoGrid = document.querySelector('.photo__grid');
 const photoTemplate = document.querySelector('#photoTemplate').content;
 
@@ -52,57 +53,54 @@ const closePopup = (popup) => {
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
 const handleProfileFormSubmit = (evt) => {
 
+  closePopup(popupEdit);
+
   evt.preventDefault();
   
   names.textContent = nameInput.value;
   doer.textContent = jobInput.value;
 
-  closePopup(popupEdit);
-  }
+}
 
 // ФУНКЦИЯ  УДАЛЕНИЕ КАРТОЧЕК 
 const deleteCard = (e) => {
-  e.target.closest('.photo__item').remove();
+  e.target.closest('.card').remove();
 }
 
 // ФУНКЦИЯ LIKE КАРТОЧЕК 
 const handleLike = (e) =>  {
-  e.target.classList.toggle('photo__button-like_active');
+  e.target.classList.toggle('card__button-like_active');
 }
 
 // ФУНКЦИЯ ОТКРЫТИЯ ФОТО
 const openPhoto = (e) => {
-  openPopup(popupPhoto);
   popupFigcaption.textContent = e.target.alt;
   popupImage.src = e.target.src;
   popupImage.alt  = e.target.alt;
+  openPopup(popupPhoto);
 }
 
 
 // ФУНКЦИЯ создания карточки
 const createCard = ({name, link}) => {
     
-  const photoItem = photoTemplate.cloneNode(true);
-  const photoHeading = photoItem.querySelector('.photo__heading');
-  const photoImage = photoItem.querySelector('.photo__image');
-  const handleDeleteCard = photoItem.querySelector('.photo__button-basket');
-  const handleLikeCard = photoItem.querySelector('.photo__button-like');
+  const card = photoTemplate.cloneNode(true);
+  const cardHeading = card.querySelector('.card__heading');
+  const cardImage = card.querySelector('.card__image');
+  const buttonDeleteCard = card.querySelector('.card__button-basket');
+  const buttonLikeCard = card.querySelector('.card__button-like');
 
-  photoHeading.textContent = name;
-  photoImage.src = link;
-  photoImage.alt = name;
+  cardHeading.textContent = name;
+  cardImage.src = link;
+  cardImage.alt = name;
 
-  handleDeleteCard.addEventListener('click', function (e) {
-    deleteCard (e);
-  });
+  buttonDeleteCard.addEventListener('click', deleteCard);
 
-  handleLikeCard.addEventListener('click', function (e) {
-    handleLike (e);
-  });
+  buttonLikeCard.addEventListener('click', handleLike);
 
-  photoImage.addEventListener('click', openPhoto);
+  cardImage.addEventListener('click', openPhoto);
 
-  return photoItem;
+  return card;
 }
 
 // КАРТОЧУК С JS
@@ -110,19 +108,19 @@ initialCards.forEach(function ({name, link}) {
 
   const newCard = createCard ({name, link});
   photoGrid.append(newCard);
-  })
+})
 
 
 
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТОЧКИ
 const  handleAddCardFormSubmit = (evt) => {
 
+  closePopup(popupAddCard);
+
   evt.preventDefault();
   
   const newCardForm = createCard ({name: namePlaceInput.value, link: LinkInput.value});
   photoGrid.prepend(newCardForm);
-
-  closePopup(popupAddCard);
 
   formAddCard.reset();
 }
@@ -146,12 +144,11 @@ const closePopupEsc = (evt) => {
 
 
 // =======================================================================
-
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ОТКРЫТИЯ
 buttonOpenEdit.addEventListener('click', function () {
-  openPopup(popupEdit);
   nameInput.value = names.textContent;
   jobInput.value = doer.textContent;
+  openPopup(popupEdit);
 });
 
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ЗВКРЫТИЯ
@@ -170,6 +167,7 @@ formEdit.addEventListener('submit', handleProfileFormSubmit);
 
 // ОБРАБОТЧИК ПОПАПА КАРТОЧКИ ОТКРЫТИЯ 
 buttonOpenPopupAddCard.addEventListener('click', function () {
+  disasbleButtonSave(buttonAddCardSave);
   openPopup(popupAddCard);
 });
 
@@ -190,7 +188,7 @@ formAddCard.addEventListener('submit', handleAddCardFormSubmit);
 //  ОБРАБОТЧИК ЗАКРЫТИЕ ПОПАПА ФОТО
 buttonPhotoClose.addEventListener('click', function () {
   closePopup(popupPhoto);
- });
+});
 
  // ОБРАБОТЧИK ФОТО ОВЕЛЕЯ
 popupPhoto.addEventListener('mousedown', closePopupOwerlay);

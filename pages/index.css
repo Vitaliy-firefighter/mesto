@@ -56,32 +56,32 @@
 /* ПОДКЛЮЧАЕМ PHOTO__GRID */
 @import url(../blocks/photo/__grid/photo__grid.css);
 
-/* ПОДКЛЮЧАЕМ PHOTO__ITEM */
-@import url(../blocks/photo/__item/photo__item.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__IMAGE */
-@import url(../blocks/photo/__image/photo__image.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__CONTENT */
-@import url(../blocks/photo/__content/photo__content.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__HEADING */
-@import url(../blocks/photo/__heading/photo__heading.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-LIKE */
-@import url(../blocks/photo/__button-like/photo__button-like.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-LIKE_ACTIVE */
-@import url(../blocks/photo/__button-like/_active/photo__button-like_active.css);
-
-/* ПОДКЛЮЧАЕМ PHOTO__BUTTON-BASKET */
-@import url(../blocks/photo/__button-basket/photo__button-basket.css);
-
 /* ПОДКЛЮЧАЕМ FOOTER */
 @import url(../blocks/footer/footer.css);
 
 /* ПОДКЛЮЧАЕМ FOOTER__COPIRIGHT */
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+/* ПОДКЛЮЧАЕМ CARD */
+@import url(../blocks/card/card.css);
+
+/* ПОДКЛЮЧАЕМ CARD__IMAGE */
+@import url(../blocks/card/__image/card__image.css);
+
+/* ПОДКЛЮЧАЕМ CARD__CONTENT */
+@import url(../blocks/card/__content/card__content.css);
+
+/* ПОДКЛЮЧАЕМ CARD__HEADING */
+@import url(../blocks/card/__heading/card__heading.css);
+
+/* ПОДКЛЮЧАЕМ CARD__BUTTON-LIKE */
+@import url(../blocks/card/__button-like/card__button-like.css);
+
+/* ПОДКЛЮЧАЕМ CARD__BUTTON-LIKE_ACTIVE */
+@import url(../blocks/card/__button-like/_active/card__button-like_active.css);
+
+/* ПОДКЛЮЧАЕМ CARD__BUTTON-BASKET */
+@import url(../blocks/card/__button-basket/card__button-basket.css);
 
 /* ПОДКЛЮЧАЕМ POPUP */
 @import url(../blocks/popup/popup.css);

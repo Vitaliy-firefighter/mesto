@@ -1,4 +1,4 @@
-.photo__button-like {
+.card__button-like {
   width: 22px;
   height: 19px;
   padding: 0 9px 0 11px;
@@ -9,10 +9,10 @@
   background: url(../../../images/like/like_normal.svg) no-repeat;
   background-position: center center;
 }
-.photo__button-like:focus {
+.card__button-like:focus {
   outline: none;
   opacity: .6;
 }
-.photo__button-like:hover {
+.card__button-like:hover {
   opacity: .6;
 }
