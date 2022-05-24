@@ -6,6 +6,8 @@ const obj = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_active'
 }
+
+// ФУНКЦИЯ ПОКАЗА ОШИБКИ
 const showInputError = (formElement, inputElement, errorMessage, obj) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(obj.inputErrorClass);
@@ -13,7 +15,7 @@ const showInputError = (formElement, inputElement, errorMessage, obj) => {
   errorElement.classList.add(obj.errorClass);
 };
 
-
+// ФУНКЦИЯ СКРЫТИЯ ОШИБКИ
 const hideInputError = (formElement, inputElement, obj) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(obj.inputErrorClass);
@@ -21,7 +23,7 @@ const hideInputError = (formElement, inputElement, obj) => {
   errorElement.textContent = '';
 };
 
-
+// ФУНКЦИЯ ПРОВЕРКИ НА ВАЛИДНОСТЬ
 const checkInputValidity = (formElement, inputElement, obj) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, obj);
@@ -30,13 +32,11 @@ const checkInputValidity = (formElement, inputElement, obj) => {
   }
 };
 
-
 const setEventListeners = (formElement, obj) => {
   const inputList = Array.from(formElement.querySelectorAll(obj.inputSelector));
   const buttonElement = formElement.querySelector(obj.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement, obj);
-
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
@@ -45,7 +45,6 @@ const setEventListeners = (formElement, obj) => {
     })
   })
 }
-
 
 const enableValidation = (obj) => {
   const formList = Array.from(document.querySelectorAll(obj.formSelector));
@@ -57,27 +56,27 @@ const enableValidation = (obj) => {
   })
 }
 
-
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   })
  }
 
-
- const disasbleButtonSave = (buttonElement) => {
+// ФУНКЦИЯ ОТКЛЮЧЕНИЯ КОНПКИ SAVE
+ const disableButtonSave = (buttonElement) => {
   buttonElement.classList.add(obj.inactiveButtonClass);
   buttonElement.setAttribute('disabled', true);
 }
+
+// ФУНКЦИЯ ВВКЛЮЧЕНИЯ КОНПКИ SAVE
 const enableButtonSave = (buttonElement) => {
   buttonElement.classList.remove(obj.inactiveButtonClass);
   buttonElement.removeAttribute('disabled');
 }
 
-
  const toggleButtonState = (inputList, buttonElement, obj) => {
   if (hasInvalidInput(inputList)) {
-    disasbleButtonSave(buttonElement);
+    disableButtonSave(buttonElement);
   }
   else {
     enableButtonSave(buttonElement);

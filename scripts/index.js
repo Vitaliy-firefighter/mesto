@@ -14,26 +14,21 @@ const buttonAddCardSave = popupAddCard.querySelector('.popup__save');
 const photoGrid = document.querySelector('.photo__grid');
 const photoTemplate = document.querySelector('#photoTemplate').content;
 
-
 // ФОРМЫ 
 const formEdit = document.forms.editForm;
 const formAddCard = document.forms.formAddCard;
 
 // ИНПУТЫ
 const namePlaceInput = document.querySelector('#namePlaceInput');
-const LinkInput = document.querySelector('#LinkInput');
+const linkInput = document.querySelector('#linkInput');
 const nameInput = document.querySelector('#nameInput');
 const jobInput = document.querySelector('#jobInput');
-
-
 
 //  ОТКРЫТИЕ ПОПАПА ФОТО
 const popupPhoto = document.querySelector('#popupPhoto');
 const buttonPhotoClose = document.querySelector('#buttonPhotoClose');
 const popupImage = document.querySelector('.popup__image');
 const popupFigcaption = document.querySelector('.popup__figcaption');
-
-
 
 // =====================================================================
 // ФУНКЦИЯ ОТКРЫТИЯ ПОПАПА 
@@ -42,13 +37,11 @@ const openPopup = (popup) => {
   document.addEventListener('keydown', closePopupEsc);
 }
 
-
 // ФУНКЦИЯ ЗАКРЫТИЯ ПОПАПА
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened'); 
   document.removeEventListener('keydown', closePopupEsc);
 }
-
 
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
 const handleProfileFormSubmit = (evt) => {
@@ -80,7 +73,6 @@ const openPhoto = (e) => {
   openPopup(popupPhoto);
 }
 
-
 // ФУНКЦИЯ создания карточки
 const createCard = ({name, link}) => {
     
@@ -110,8 +102,6 @@ initialCards.forEach(function ({name, link}) {
   photoGrid.append(newCard);
 })
 
-
-
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТОЧКИ
 const  handleAddCardFormSubmit = (evt) => {
 
@@ -119,12 +109,11 @@ const  handleAddCardFormSubmit = (evt) => {
 
   evt.preventDefault();
   
-  const newCardForm = createCard ({name: namePlaceInput.value, link: LinkInput.value});
+  const newCardForm = createCard ({name: namePlaceInput.value, link: linkInput.value});
   photoGrid.prepend(newCardForm);
 
   formAddCard.reset();
 }
-
 
 // ФУНКЦИЯ ЗАКРЫТИЯ ОВЕРЕЛЕЯ
 const closePopupOwerlay = (evt) => {
@@ -140,8 +129,6 @@ const closePopupEsc = (evt) => {
     closePopup(popupEl);
   }
 }
-
-
 
 // =======================================================================
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ОТКРЫТИЯ
@@ -159,15 +146,12 @@ buttonEditClose.addEventListener('click', function () {
 // ОБРАБОТЧИK ПРОФИЛЯ ОВРЕЛЕЯ
 popupEdit.addEventListener('mousedown', closePopupOwerlay);
 
-
 // ОБРАБОТЧИК ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
 formEdit.addEventListener('submit', handleProfileFormSubmit); 
 
-
-
 // ОБРАБОТЧИК ПОПАПА КАРТОЧКИ ОТКРЫТИЯ 
 buttonOpenPopupAddCard.addEventListener('click', function () {
-  disasbleButtonSave(buttonAddCardSave);
+  disableButtonSave(buttonAddCardSave);
   openPopup(popupAddCard);
 });
 
@@ -180,11 +164,9 @@ buttonAddCardClose.addEventListener('click', function () {
 // ОБРАБОТЧИK ДОБАВЛЕНИЯ КАРТОЧКИ ОВЕЛЕЯ
 popupAddCard.addEventListener('mousedown', closePopupOwerlay);
 
-
 // ОБРАБОТЧИК ОТПРАЛКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТЫ
 formAddCard.addEventListener('submit', handleAddCardFormSubmit); 
 
- 
 //  ОБРАБОТЧИК ЗАКРЫТИЕ ПОПАПА ФОТО
 buttonPhotoClose.addEventListener('click', function () {
   closePopup(popupPhoto);
