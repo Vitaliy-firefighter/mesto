@@ -1,8 +1,10 @@
+import {card} from './card.js'
+import {obj, initialCards} from './constants.js'
+import {FormValidator} from './FormValidator.js'
 // ПОПАП ПРОФИЛЯ
 const popupEdit = document.querySelector('#popupEdit');
 const buttonOpenEdit = document.querySelector('.profile__button-edit');
 const buttonEditClose = document.querySelector('#buttonEditClose');
-const buttonEditSave = document.querySelector('#buttonEditSave');
 const names = document.querySelector('.profile__names');
 const doer = document.querySelector('.profile__doer');
 
@@ -10,9 +12,7 @@ const doer = document.querySelector('.profile__doer');
 const popupAddCard = document.querySelector('#popupAddCard');
 const buttonOpenPopupAddCard = document.querySelector('.profile__add');
 const buttonAddCardClose = document.querySelector('#buttonAddCardClose');
-const buttonAddCardSave = popupAddCard.querySelector('.popup__save');
 const photoGrid = document.querySelector('.photo__grid');
-const photoTemplate = document.querySelector('#photoTemplate').content;
 
 // ФОРМЫ 
 const formEdit = document.forms.editForm;
@@ -25,14 +25,21 @@ const nameInput = document.querySelector('#nameInput');
 const jobInput = document.querySelector('#jobInput');
 
 //  ОТКРЫТИЕ ПОПАПА ФОТО
-const popupPhoto = document.querySelector('#popupPhoto');
+export const popupPhoto = document.querySelector('#popupPhoto');
 const buttonPhotoClose = document.querySelector('#buttonPhotoClose');
-const popupImage = document.querySelector('.popup__image');
-const popupFigcaption = document.querySelector('.popup__figcaption');
+export const popupImage = document.querySelector('.popup__image');
+export const popupFigcaption = document.querySelector('.popup__figcaption');
+
+// вызов классов
+const newFormEdit = new FormValidator(obj, formEdit);
+newFormEdit.enableValidation();
+
+const newFormAddCard = new FormValidator(obj, formAddCard);
+newFormAddCard.enableValidation();
 
 // =====================================================================
 // ФУНКЦИЯ ОТКРЫТИЯ ПОПАПА 
-const openPopup = (popup) => {
+export const openPopup = (popup) => {
   popup.classList.add('popup_opened'); 
   document.addEventListener('keydown', closePopupEsc);
 }
@@ -55,62 +62,27 @@ const handleProfileFormSubmit = (evt) => {
 
 }
 
-// ФУНКЦИЯ  УДАЛЕНИЕ КАРТОЧЕК 
-const deleteCard = (e) => {
-  e.target.closest('.card').remove();
-}
-
-// ФУНКЦИЯ LIKE КАРТОЧЕК 
-const handleLike = (e) =>  {
-  e.target.classList.toggle('card__button-like_active');
-}
-
-// ФУНКЦИЯ ОТКРЫТИЯ ФОТО
-const openPhoto = (e) => {
-  popupFigcaption.textContent = e.target.alt;
-  popupImage.src = e.target.src;
-  popupImage.alt  = e.target.alt;
-  openPopup(popupPhoto);
-}
-
-// ФУНКЦИЯ создания карточки
-const createCard = ({name, link}) => {
-    
-  const card = photoTemplate.cloneNode(true);
-  const cardHeading = card.querySelector('.card__heading');
-  const cardImage = card.querySelector('.card__image');
-  const buttonDeleteCard = card.querySelector('.card__button-basket');
-  const buttonLikeCard = card.querySelector('.card__button-like');
-
-  cardHeading.textContent = name;
-  cardImage.src = link;
-  cardImage.alt = name;
-
-  buttonDeleteCard.addEventListener('click', deleteCard);
-
-  buttonLikeCard.addEventListener('click', handleLike);
-
-  cardImage.addEventListener('click', openPhoto);
-
-  return card;
-}
-
-// КАРТОЧУК С JS
-initialCards.forEach(function ({name, link}) {
-
-  const newCard = createCard ({name, link});
-  photoGrid.append(newCard);
+const renderCard = (card) => {
+  photoGrid.prepend(card);
+} 
+initialCards.forEach((item) => {
+  const cardNew = new card(item.name, item.link, '#photoTemplate');
+  const cardElement = cardNew.generateCard();
+  renderCard(cardElement);
 })
+
 
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТОЧКИ
 const  handleAddCardFormSubmit = (evt) => {
+
+  const cardNew = new card(namePlaceInput.value, linkInput.value, '#photoTemplate');
+  const cardElement = cardNew.generateCard();
+  renderCard(cardElement);
 
   closePopup(popupAddCard);
 
   evt.preventDefault();
   
-  const newCardForm = createCard ({name: namePlaceInput.value, link: linkInput.value});
-  photoGrid.prepend(newCardForm);
 
   formAddCard.reset();
 }
@@ -151,7 +123,6 @@ formEdit.addEventListener('submit', handleProfileFormSubmit);
 
 // ОБРАБОТЧИК ПОПАПА КАРТОЧКИ ОТКРЫТИЯ 
 buttonOpenPopupAddCard.addEventListener('click', function () {
-  disableButtonSave(buttonAddCardSave);
   openPopup(popupAddCard);
 });
 
@@ -174,4 +145,6 @@ buttonPhotoClose.addEventListener('click', function () {
 
  // ОБРАБОТЧИK ФОТО ОВЕЛЕЯ
 popupPhoto.addEventListener('mousedown', closePopupOwerlay);
+
+
 
