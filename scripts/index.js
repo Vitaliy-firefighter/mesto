@@ -1,6 +1,8 @@
 import {card} from './card.js'
 import {obj, initialCards} from './constants.js'
 import {FormValidator} from './FormValidator.js'
+import {openPopup, popupPhoto, closePopup} from './utils.js'
+
 // ПОПАП ПРОФИЛЯ
 const popupEdit = document.querySelector('#popupEdit');
 const buttonOpenEdit = document.querySelector('.profile__button-edit');
@@ -25,10 +27,7 @@ const nameInput = document.querySelector('#nameInput');
 const jobInput = document.querySelector('#jobInput');
 
 //  ОТКРЫТИЕ ПОПАПА ФОТО
-export const popupPhoto = document.querySelector('#popupPhoto');
 const buttonPhotoClose = document.querySelector('#buttonPhotoClose');
-export const popupImage = document.querySelector('.popup__image');
-export const popupFigcaption = document.querySelector('.popup__figcaption');
 
 // вызов классов
 const newFormEdit = new FormValidator(obj, formEdit);
@@ -38,18 +37,6 @@ const newFormAddCard = new FormValidator(obj, formAddCard);
 newFormAddCard.enableValidation();
 
 // =====================================================================
-// ФУНКЦИЯ ОТКРЫТИЯ ПОПАПА 
-export const openPopup = (popup) => {
-  popup.classList.add('popup_opened'); 
-  document.addEventListener('keydown', closePopupEsc);
-}
-
-// ФУНКЦИЯ ЗАКРЫТИЯ ПОПАПА
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened'); 
-  document.removeEventListener('keydown', closePopupEsc);
-}
-
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ПРОФИЛЯ
 const handleProfileFormSubmit = (evt) => {
 
@@ -62,29 +49,24 @@ const handleProfileFormSubmit = (evt) => {
 
 }
 
-const renderCard = (card) => {
-  photoGrid.prepend(card);
-} 
-initialCards.forEach((item) => {
-  const cardNew = new card(item.name, item.link, '#photoTemplate');
+const createCard = (name, link, template) => {
+  const cardNew = new card(name, link, template);
   const cardElement = cardNew.generateCard();
-  renderCard(cardElement);
+  photoGrid.prepend(cardElement);
+} 
+initialCards.reverse().forEach((item) => {
+  createCard(item.name, item.link, '#photoTemplate');
 })
 
 
 // ФУНКЦИЯ ОТПРАВКИ ФОРМЫ ДОБАВЛЕНИЯ КАРТОЧКИ
 const  handleAddCardFormSubmit = (evt) => {
 
-  const cardNew = new card(namePlaceInput.value, linkInput.value, '#photoTemplate');
-  const cardElement = cardNew.generateCard();
-  renderCard(cardElement);
-
-  closePopup(popupAddCard);
-
   evt.preventDefault();
-  
-
+  createCard(namePlaceInput.value, linkInput.value, '#photoTemplate');
+  closePopup(popupAddCard);
   formAddCard.reset();
+  newFormAddCard.toggleButtonState();
 }
 
 // ФУНКЦИЯ ЗАКРЫТИЯ ОВЕРЕЛЕЯ
@@ -94,13 +76,7 @@ const closePopupOwerlay = (evt) => {
   }
 }
 
-// ФУНКЦИЯ ESC 
-const closePopupEsc = (evt) => {
-  if (evt.key === 'Escape') {
-    const popupEl = document.querySelector('.popup_opened');
-    closePopup(popupEl);
-  }
-}
+
 
 // =======================================================================
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ОТКРЫТИЯ
@@ -108,6 +84,7 @@ buttonOpenEdit.addEventListener('click', function () {
   nameInput.value = names.textContent;
   jobInput.value = doer.textContent;
   openPopup(popupEdit);
+  newFormEdit.toggleButtonState();
 });
 
 // ОБРАБОТЧИK ПРОФИЛЯ ПОПАПА ЗВКРЫТИЯ

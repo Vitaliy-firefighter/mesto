@@ -1,4 +1,4 @@
-import {openPopup, popupImage, popupFigcaption, popupPhoto} from './index.js'
+import {openPopup, popupImage, popupFigcaption, popupPhoto} from './utils.js'
 export class card {
   constructor(name, link, templateEl) {
     this._name = name;
@@ -16,7 +16,8 @@ export class card {
   }
 
   _deleteCard(e) {
-    e.target.closest('.card').remove();
+    this._element.remove();
+    this._element = '';
   }
 
   _openPhoto() {
